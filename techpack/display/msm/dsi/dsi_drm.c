@@ -195,6 +195,7 @@ static void dsi_bridge_pre_enable(struct drm_bridge *bridge)
 
 	if (bridge->encoder->crtc->state->active_changed)
 		atomic_set(&c_bridge->display->panel->esd_recovery_pending, 0);
+		mi_cfg = &c_bridge->display->panel->mi_cfg;
 
 	mi_cfg = &c_bridge->display->panel->mi_cfg;
 
