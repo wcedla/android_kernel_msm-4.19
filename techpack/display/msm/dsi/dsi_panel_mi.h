@@ -368,9 +368,13 @@ ssize_t dsi_panel_read_mipi_reg(struct dsi_panel *panel, char *buf);
 
 bool dsi_panel_is_need_tx_cmd(u32 param);
 
+ssize_t dsi_panel_get_doze_brightness(struct dsi_panel *panel, char *buf);
+
 int dsi_panel_set_disp_param(struct dsi_panel *panel, u32 param);
 
 int dsi_panel_read_gamma_param(struct dsi_panel *panel);
+
+ssize_t dsi_panel_print_gamma_param(struct dsi_panel *panel,char *buf);
 
 int dsi_panel_update_gamma_param(struct dsi_panel *panel);
 
