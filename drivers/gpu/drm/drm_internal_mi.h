@@ -56,6 +56,6 @@ ssize_t dsi_display_fod_get(struct drm_connector *connector, char *buf);
 void sde_connector_manual_update_fod_hbm(struct drm_connector *connector,bool status);
 
 /* dsi_display.c */
-static ssize_t sysfs_fod_ui_read(struct device *dev,
+ssize_t sysfs_fod_ui_read(struct device *dev,
 	struct device_attribute *attr, char *buf);
 
