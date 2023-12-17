@@ -783,6 +783,8 @@ void sde_connector_set_qsync_params(struct drm_connector *connector);
 void sde_connector_complete_qsync_commit(struct drm_connector *conn,
 			struct msm_display_conn_params *params);
 
+void sde_connector_manual_update_fod_hbm(struct drm_connector *connector,bool status);
+
 /**
 * sde_connector_get_dyn_hdr_meta - returns pointer to connector state's dynamic
 *				   HDR metadata info
