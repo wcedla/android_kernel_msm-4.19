@@ -252,7 +252,7 @@ static ssize_t manual_hbm_show(struct device *dev,
 	struct device_attribute *attr, char *buf)
 {
 	int ret;
-	ret=sysfs_fod_ui_read(dev,attr,buf)
+	ret=sysfs_fod_ui_read(dev,attr,buf);
 	return ret;
 }
 
