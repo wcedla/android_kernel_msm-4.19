@@ -20,7 +20,6 @@
 
 #include <drm/drm_sysfs.h>
 #include <drm/drmP.h>
-#include "sde_connector.h"
 #include "drm_internal.h"
 #include "drm_internal_mi.h"
 
