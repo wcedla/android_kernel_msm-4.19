@@ -22,8 +22,6 @@
 #include <drm/drmP.h>
 #include "drm_internal.h"
 #include "drm_internal_mi.h"
-#include "../../../techpack/display/msm/sde/sde_connector.h"
-#include "../../../techpack/display/msm/dsi/dsi_display.h"
 
 #define to_drm_minor(d) dev_get_drvdata(d)
 #define to_drm_connector(d) dev_get_drvdata(d)
@@ -253,18 +251,9 @@ static ssize_t manual_hbm_store(struct device *device,
 static ssize_t manual_hbm_show(struct device *dev,
 	struct device_attribute *attr, char *buf)
 {
-	struct dsi_display *display;
-	bool status;
-
-	display = dev_get_drvdata(dev);
-	if (!display) {
-		pr_err("Invalid display\n");
-		return -EINVAL;
-	}
-
-	status = atomic_read(&display->fod_ui);
-
-	return snprintf(buf, PAGE_SIZE, "%d\n", status);
+	int ret;
+	ret=sysfs_fod_ui_read(dev,attr,buf)
+	return ret;
 }
 
 static ssize_t disp_param_store(struct device *device,
