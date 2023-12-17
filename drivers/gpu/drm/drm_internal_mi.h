@@ -51,3 +51,6 @@ ssize_t dsi_display_print_gamma_param(struct drm_connector *connector,
 ssize_t dsi_display_fod_get(struct drm_connector *connector, char *buf);
 
 #endif /*_DRM_INTERFACE_MI_H_*/
+
+/* sde_connector.c */
+void sde_connector_manual_update_fod_hbm(struct drm_connector *connector,bool status);
