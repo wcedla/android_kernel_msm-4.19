@@ -114,7 +114,7 @@ fscrypt_get_dummy_context(struct super_block *sb)
  */
 static inline void fscrypt_handle_d_move(struct dentry *dentry)
 {
-	dentry->d_flags &= ~DCACHE_NOKEY_NAME;
+	dentry->d_flags &= ~DCACHE_ENCRYPTED_NAME;
 }
 
 /**
