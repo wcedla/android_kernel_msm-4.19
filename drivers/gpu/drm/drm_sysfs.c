@@ -236,12 +236,13 @@ static ssize_t manual_hbm_store(struct device *device,
 {
 	struct drm_connector *connector = to_drm_connector(device);
 	int rc, val;
+	bool new_status;
 
 	rc = kstrtoint(buf, 10, &val);
 	if (rc)
-		return -EINVAL;
-	
-	bool new_status = (val != 0) ? true : false;
+		return -EINVAL;	
+
+    new_status = (val != 0) ? true : false;
 
 	sde_connector_manual_update_fod_hbm(connector, new_status);
 
